@@ -1,0 +1,22 @@
+<nav>
+    <ul class="lista">
+        <li *ngFor="let opcion of menu" >
+            <div>
+                <a class="link">
+                    <i class="fas">
+                        <img class="iconoMenu" src="{{opcion.imagen}}" alt="{{opcion.descripcion}}" />                    
+                    </i>
+                    <span class="itemMenu"> {{opcion.nombre}}</span>
+                    <mat-icon src="assets/imagenes/chevron.png" class="chevron">expand-more</mat-icon>
+                </a>
+                <ul class="opcionesSubMenu">
+                    <li *ngFor="let opcionSubMenu of opcion.subMenu">
+                        <a class="itemSubMenu" routerLink="{{opcionSubMenu.ruta}}">
+                            {{opcionSubMenu.nombre}}
+                        </a>
+                    </li>
+                </ul>
+            </div>            
+        </li>
+    </ul>
+</nav>

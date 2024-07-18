@@ -1,0 +1,29 @@
+<div class="contenedor">
+    <div class="contenidoPaginaPrincipal">
+        <header>
+            <app-header></app-header>
+        </header>
+        <main class="contenidoContenedor">
+            <div>
+                <div>
+                    <app-sidenav></app-sidenav>
+                </div>            
+            </div>
+            &nbsp; &nbsp;
+            &nbsp; &nbsp;
+            <div >
+                <div>
+                    <app-miga-pan></app-miga-pan>
+                </div>
+                <div class="contenido">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+            
+        </main>
+
+        <footer class="piePagina">
+            <app-footer></app-footer>
+        </footer>
+    </div>
+</div>

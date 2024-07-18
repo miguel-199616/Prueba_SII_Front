@@ -1,0 +1,6 @@
+<ol class="breadcrumb">
+    <li class="nav-items" *ngFor="let breadcrumb of (breadcrumb$ | async); let first=first">
+        <mat-icon *ngIf="!first" mat-list-icon>keyboard_arrow_right</mat-icon>
+        <a [routerLink]="breadcrumb.url" >{{breadcrumb.label}}</a>
+    </li>
+</ol>

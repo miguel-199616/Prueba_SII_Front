@@ -1,0 +1,25 @@
+
+.columna{
+    flex-flow: column;
+}
+
+.contenedorFormulario{
+    display: block;
+    flex-flow: row;
+    justify-content: space-around;
+}
+
+.contenedorConsulta{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.contenedorBotonConsulta{
+    display: flex;
+    flex-flow: row;
+    justify-content: end ;
+}
+.columnaTabla{
+    width: 250px;
+}

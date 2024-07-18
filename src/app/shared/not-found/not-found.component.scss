@@ -1,0 +1,14 @@
+.contenedor{
+    height: 100vh;
+    img{
+        max-width: 29%;
+        max-height: 29%;
+        display: block;
+    }
+}
+
+.contenido-not-found{
+    display: ruby-text;
+    align-items: center;
+    justify-content: center;
+}

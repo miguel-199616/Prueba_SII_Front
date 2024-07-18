@@ -1,0 +1,61 @@
+<div class="contenedor">
+    <h2> {{TITULO_PANTALLA_CONSULTAR_EMPLEADOS}}</h2>
+    <form [formGroup]="consultaEmpleadoFormulario">
+        <div class="columna">
+        <div class="contenedorFormulario">
+            <div class="contenedorConsulta">
+                <div class="columna">
+                    <label class="label-input" for="idEmpleado"> Id. Empleado </label>
+                    <input id="idEmpleado" name="idEmpleado" type="text" formControlName="idEmpleado">
+                </div>
+            </div>
+            <br /> <br />
+            <div class="contenedorBotonConsulta">
+                <div class="columna">
+                    <button class="submit-button button-warn" (click)="consultarEmpleados()"> Consultar </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="columna">
+            <h3> Resultados </h3>
+            <div>
+                <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 demo-table">
+                    <ng-container matColumnDef="employee_name" >
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef class="columnaTabla">
+                            Nombre
+                        </th>
+                        <td mat-cell *matCellDef="let empleado">
+                            {{empleado.employee_name}}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="employee_salary">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef class="columnaTabla">
+                            Salario Mes
+                        </th>
+                        <td mat-cell *matCellDef="let empleado">
+                            {{empleado.employee_salary| currency : 'USD' : true : '1.2-2'}}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="employee_salary_year">
+                        <th mat-header-cell mat-sort-header *matHeaderCellDef class="columnaTabla">
+                            Salario Anual
+                        </th>
+                        <td mat-cell *matCellDef="let empleado">
+                            {{empleado.employee_salary_year| currency: 'USD' : true : '1.2-2'}}
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                    <tr *matNoDataRow>
+                        <td class="mat-cell" colspan="3">No existen datos</td>
+                    </tr>
+                </table>
+                <mat-paginator #paginator [length]="5" [pageSizeOptions]="[5,10,20]" showFirstLastButtons
+                    aria-label="Selector de páginas de empleados">
+                </mat-paginator>
+            </div>
+        </div>
+        </div>
+    </form>
+</div>
